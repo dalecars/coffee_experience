@@ -21,29 +21,39 @@
                 <img src="assets/images/coffee_logo3.png" class="d-inline align-middle" alt="Ireland Coffee Experience">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"  onclick="toggleSidePanel()">
-                <span class="navbar-toggler-icon"></span>
+                <div class="navbar-icon"  onclick="changeIcon(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
             </button>
             <div class="collapse navbar-collapse">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="#home">Home</a>
-                    <a class="nav-item nav-link" href="#coffee-belt">Coffee Belt</a>
-                    <a class="nav-item nav-link" href="#coffee-drinks">Drinks</a>
-                    <a class="nav-item nav-link" href="#locations">Locations</a>
-                    <a class="nav-item nav-link" href="#contact">Contact</a>
+                    <a class="nav-item nav-link active" href="index.html">Home</a>
+                    <a class="nav-item nav-link" href="coffee-belt.html">Coffee Belt</a>
+                    <a class="nav-item nav-link" href="coffee-drinks.html">Drinks</a>
+                    <a class="nav-item nav-link" href="locations.html">Locations</a>
+                    <a class="nav-item nav-link" href="contact.html">Contact</a>
                 </div>
             </div>
         </nav>
 
         <div class="sidePanel">
-            <a href="#home">Home</a>
-            <a href="#coffee-belt">Coffee Belt</a>
-            <a href="#coffee-drinks">Drinks</a>
-            <a href="#locations">Locations</a>
-            <a href="#">Contact</a>
+            <div class="activePage">
+                <a href="index.html">Home</a>
+            </div>
+            <hr>
+            <a href="coffee-belt.html">Coffee Belt</a>
+            <hr>
+            <a href="coffee-drinks.html">Drinks</a>
+            <hr>
+            <a href="locations.html">Locations</a>
+            <hr>
+            <a href="contact.html">Contact</a>
         </div>
         
         <div class="jumbotron">
-            <h1>Ireland Coffee Experience</h1>
+            <h1>An independent guide to speciality coffee in Ireland</h1>
         </div> 
     </header>
  
@@ -51,10 +61,10 @@
  
     <section id="coffee-scene">
         <div class="container section-container">
-            <h2 class="container-title">Ireland Coffee Guide</h2>
+            <h2 class="container-title">The Ireland Cafe Culture</h2>
             <div class="container-content">
                 <p>The coffee scene in Ireland is growing and the level at which we’re doing cafe's is amazing. The attention to detail on a fit-out, the care taken to curate and execute a great menu, the pride in using the phenomenal ingredients we have on our doorstep and the level of professionalism being shown in the preparation of coffee drinks is at a world-class level.</p>
-                <p>We’ve tried to include as many places as we can and as you’ll see the geographical spread is pretty wide. We’ve also included some recommendations for food, pubs and general attractions too. We’d recommend that you ask at any of these coffee stops for more local recommendations…the service you are about to receive is second to none.</p>
+                <p>We’ve tried to include as many places as we can and as you’ll see the geographical spread is pretty wide. We’d recommend that you ask at any of these coffee stops for more local recommendations…the service you are about to receive is second to none.</p>
             </div>
         </div>
     </section>
