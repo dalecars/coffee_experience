@@ -15,7 +15,7 @@
 
 <!-- ########### Header ########### -->
 
-    <header>
+    <header class="locations-background">
         <nav class="navbar navbar-expand-xl navbar-dark">
             <a class="navbar-brand" href="#home">
                 <img src="assets/images/coffee_logo3.png" class="d-inline align-middle" alt="Ireland Coffee Experience">
@@ -53,7 +53,7 @@
         </div>
         
         <div class="jumbotron">
-            <h1>An independent guide to speciality coffee in Ireland</h1>
+            <h1>Locations</h1>
         </div> 
     </header>
  
@@ -61,11 +61,13 @@
  
     <section id="coffee-scene">
         <div class="container section-container">
-            <h2 class="container-title">The Ireland Cafe Culture</h2>
+            <h2 class="container-title">Cafe Locations</h2>
             <div class="container-content">
                 <p>The coffee scene in Ireland is growing and the level at which we’re doing cafe's is amazing. The attention to detail on a fit-out, the care taken to curate and execute a great menu, the pride in using the phenomenal ingredients we have on our doorstep and the level of professionalism being shown in the preparation of coffee drinks is at a world-class level.</p>
                 <p>We’ve tried to include as many places as we can and as you’ll see the geographical spread is pretty wide. We’d recommend that you ask at any of these coffee stops for more local recommendations…the service you are about to receive is second to none.</p>
             </div>
+
+            <div id="map"></div>
         </div>
     </section>
  
@@ -82,9 +84,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="assets/js/scalize.js"></script>
-    <script src='assets/js/map_markers.js'></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFd76o6BLkLBGU2IeopI4kY2Ybiy8PWyI&callback=initMap"></script>
+    <script src='assets/js/map.js'></script>
     <script src="assets/js/script.js"></script>
-    
  </body>
 </html>

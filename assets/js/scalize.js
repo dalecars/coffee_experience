@@ -195,3 +195,12 @@
     };
 
 }(jQuery));
+
+$(document).ready(function(){
+    /* animation for annotation marker */
+    $('.scalize').scalize({
+        width : 800,
+        height : 500,
+        animationSelector :'pulse',
+    });
+});

@@ -29,9 +29,28 @@ body {
     padding: 5%;
 }
 
+.container-hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 4px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
 .noScroll {
     overflow: hidden;
 }
+
+ .coffee-beans {
+    width: 70%;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+} 
 
 
 /******************* navbar *******************/
@@ -137,6 +156,24 @@ header {
     background-size: cover;
 }
 
+.header-bean-belt {
+    height: 80vh;
+    background: url("../images/coffee-plantation.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.locations-background {
+    height: 80vh;
+    background: url("../images/locations.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .jumbotron {
     display: inline-block;
     padding-top: 125px;
@@ -166,7 +203,7 @@ header {
     background-image: linear-gradient(to right, rgba(77, 0, 77, 0), rgba(77, 0, 77, 0.75), rgba(77, 0, 77, 0));
 }
 
-
+/* currently not in use coffe-map classes */
 .coffee-map2 {
     position: relative;
 }
@@ -187,6 +224,7 @@ header {
     height: 100%;
 }
 
+
 /******************* footer *******************/
 
 footer {
@@ -198,6 +236,43 @@ footer {
     font-size: 1em;
     font-weight: 700;
 }
+
+/******************* Google Map *******************/
+
+#map {
+    height: 70vh;  
+    width: 70%;  
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.gm-style .gm-style-iw-c {
+    border-radius: 0px;
+}
+
+.infoContent {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.infoContent h5 {
+    padding: 5px;
+}
+
+.infoContent img {
+    float: left;
+    height: 33px; 
+    width: 33px;
+    margin-right: 7px; 
+}
+
+.infoContent a:link, a:visited {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 
 /******************* media queries *******************/
