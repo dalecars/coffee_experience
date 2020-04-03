@@ -1,3 +1,5 @@
+var markers = new Array();
+
 function initMap() {
     var ireland = new google.maps.LatLng(53.305494, -7.737649);
     
@@ -19,12 +21,12 @@ function initMap() {
     </div>`, 54.602635, -5.927208]
     ];
 
-    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    var labelIndex = 0;
+    //var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    //var labelIndex = 0;
     
     var map = new google.maps.Map(document.getElementById('map'), {
           center: ireland,
-          zoom: 7,
+          zoom: 6,
           disableDefaultUI: true,
           zoomControl: true,
           styles: [
@@ -142,14 +144,17 @@ function initMap() {
 
     var infowindow =  new google.maps.InfoWindow({maxWidth: 300});
     var marker, count;
+    
 
     for (count = 0; count < locations.length; count++) {
        marker = new google.maps.Marker({
       position: new google.maps.LatLng(locations[count][1], locations[count][2]),
       map: map,
-      label: labels[labelIndex++ % labels.length],
+      //label: labels[labelIndex++ % labels.length],
       title: locations[count][0]
     });
+
+    markers.push(marker);
 
     google.maps.event.addListener(marker, 'click', (function (marker, count) {
       return function () {
@@ -164,11 +169,10 @@ function initMap() {
         var pos = map.getZoom();
         map.setZoom(10);
         map.setCenter(marker.getPosition());
-    //window.setTimeout(function() {map.setZoom(pos);},3000);
+      //  window.setTimeout(function() {map.setZoom(pos);},3000);
     });
-  }
 
-   /* set marker to bounce when clicked
+/*set marker to bounce when clicked
     google.maps.event.addListener(marker,'mouseover',function() {
         if (marker.getAnimation() !== null) {
             marker.setAnimation(null);
@@ -177,9 +181,19 @@ function initMap() {
         }
     });*/
 
+  }
+
+    
+
 }
+
+function OpenInfowindowForMarker(index) {
+    google.maps.event.trigger(markers[index], 'click');
+}
+
 google.maps.event.addDomListener(window, 'resize', initMap);
 google.maps.event.addDomListener(window, 'load', initMap);
+
 
 
 
