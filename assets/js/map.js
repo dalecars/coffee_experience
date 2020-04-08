@@ -1,28 +1,76 @@
+
 var markers = new Array();
 
 function initMap() {
     var ireland = new google.maps.LatLng(53.305494, -7.737649);
     
     var locations = [
-    [`<div class="infoContent">
-        <h5>Copper Lab</h5>
-        <p><img src="assets/images/coffee-icon.png" alt="Coffee Icon">91 Newry St, Banbridge BT32 3EF</p>
+    [`<div class="container-fluid infoContent">
+        <h4>Copper Lab</h4>
+        <p>91 Newry St, Banbridge BT32 3EF</p>
         <a href="https://goo.gl/maps/fUqGMN3HAFiPPxBr7" target="_blank">Get Directions</a>
     </div>`, 54.346834, -6.271724],
-    [`<div class="infoContent">
-        <h5>3FE</h5>
-        <p><img src="assets/images/coffee-icon.png" alt="Coffee Icon">32-34 Grand Canal Street Lower, Grand Canal Dock, Dublin, Ireland</p>
+    [`<div class="container-fluid infoContent">
+        <h4>3FE</h4>
+        <p>32-34 Grand Canal Street Lower, Grand Canal Dock, Dublin, Ireland</p>
         <a href="https://goo.gl/maps/yTSSqc6RAiHw1wft8" target="_blank">Get Directions</a>
     </div>`, 53.339959, -6.241968],
-    [`<div class="infoContent">
-        <h5>Established Coffee</h5>
-        <p><img src="assets/images/coffee-icon.png" alt="Coffee Icon">54 Hill St, Belfast BT1 2LB</p>
+    [`<div class="container-fluid infoContent">
+        <h4>Established</h4>
+        <p>54 Hill St, Belfast BT1 2LB</p>
         <a href="https://g.page/establishedcoffee?share" target="_blank">Get Directions</a>
-    </div>`, 54.602635, -5.927208]
+    </div>`, 54.602635, -5.927208],
+    [`<div class="container-fluid infoContent">
+        <h4>Blend & Batch</h4>
+        <p>104 Newry St, Banbridge BT32 3HE</p>
+        <a href="https://g.page/blendxbatch?share" target="_blank">Get Directions</a>
+    </div>`, 54.346274, -6.2715333],
+    [`<div class="container-fluid infoContent">
+        <h4>Babushka Kitchen Cafe</h4>
+        <p>S Pier, Portrush BT56 8FN</p>
+        <a href="https://g.page/babushkaportrush?share" target="_blank">Get Directions</a>
+    </div>`, 55.205734, -6.65635],
+    [`<div class="container-fluid infoContent">
+        <h4>Love Supreme</h4>
+        <p>57 Manor St, Stoneybatter, Dublin 7, Ireland</p>
+        <a href="https://goo.gl/maps/1gswadMBHBRBAYii9" target="_blank">Get Directions</a>
+    </div>`, 53.353033, -6.285258],
+    [`<div class="container-fluid infoContent">
+        <h4>Thru The Green</h4>
+        <p>Dundrum Road, Windy Arbour, Dublin 14, Ireland</p>
+        <a href="https://goo.gl/maps/hUna5c3R4TihH27y5" target="_blank">Get Directions</a>
+    </div>`, 53.301558, -6.245782],
+    [`<div class="container-fluid infoContent">
+        <h4>Kaph</h4>
+        <p>31 Drury St, Dublin 2, D02 Y684, Ireland</p>
+        <a href="https://g.page/Kaphsc?share" target="_blank">Get Directions</a>
+    </div>`, 53.342594, -6.26324],
+    [`<div class="container-fluid infoContent">
+        <h4>Clement & Pekoe</h4>
+        <p>50 William St S, Dublin 2, D02 DE93, Ireland</p>
+        <a href="https://goo.gl/maps/nbktY9UMqphPwcMw5" target="_blank">Get Directions</a>
+    </div>`, 53.341534, -6.262759],
+    [`<div class="container-fluid infoContent">
+        <h4>Alchemy Coffee And Books</h4>
+        <p>123 Barrack St, The Lough, Cork, T12 A594, Ireland</p>
+        <a href="https://goo.gl/maps/tMpXUrUzT5A6bBJZ8" target="_blank">Get Directions</a>
+    </div>`, 51.894023, -8.477618],
+    [`<div class="container-fluid infoContent">
+        <h4>Cork Coffee Roasters</h4>
+        <p>2 Bridge St, Victorian Quarter, Cork, Ireland</p>
+        <a href="https://goo.gl/maps/dGVP5mcjAujptRM38" target="_blank">Get Directions</a>
+    </div>`, 51.90149, -8.470001],
+    [`<div class="container-fluid infoContent">
+        <h4>Three Fools Coffee</h4>
+        <p>Grand Parade, Centre, Cork, Ireland</p>
+        <a href="https://goo.gl/maps/g2V6v6s2a4UDypCV8" target="_blank">Get Directions</a>
+    </div>`, 51.896867, -8.475005],
+    [`<div class="container-fluid infoContent">
+        <h4>Dukes Coffee Company</h4>
+        <p>4 Carey's Ln, Centre, Cork, Ireland</p>
+        <a href="https://goo.gl/maps/cSYxtDwPxuJHK8Vw9" target="_blank">Get Directions</a>
+    </div>`, 51.899119, -8.474164]
     ];
-
-    //var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    //var labelIndex = 0;
     
     var map = new google.maps.Map(document.getElementById('map'), {
           center: ireland,
@@ -141,60 +189,55 @@ function initMap() {
         ]
     });
 
+    var icon = {
+        url: '/assets/images/coffee-icon2.png',
+        size: new google.maps.Size(34, 49),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 49)
+    };
 
     var infowindow =  new google.maps.InfoWindow({maxWidth: 300});
-    var marker, count;
     
+    var marker, count;
 
     for (count = 0; count < locations.length; count++) {
-       marker = new google.maps.Marker({
-      position: new google.maps.LatLng(locations[count][1], locations[count][2]),
-      map: map,
-      //label: labels[labelIndex++ % labels.length],
-      title: locations[count][0]
+        marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[count][1], locations[count][2]),
+        map: map,
+        icon: icon,
+        title: locations[count][0]
     });
 
     markers.push(marker);
 
     google.maps.event.addListener(marker, 'click', (function (marker, count) {
-      return function () {
+        return function () {
         infowindow.setContent(locations[count][0]);
         infowindow.open(map, marker);
       }
     })(marker, count));
 
 
-    // zoom for 3 sec when clicked on marker
+    // zoom  when clicked on marker
     google.maps.event.addListener(marker,'click',function() {
         var pos = map.getZoom();
-        map.setZoom(10);
         map.setCenter(marker.getPosition());
-      //  window.setTimeout(function() {map.setZoom(pos);},3000);
+        map.setZoom(12);
     });
 
-/*set marker to bounce when clicked
-    google.maps.event.addListener(marker,'mouseover',function() {
-        if (marker.getAnimation() !== null) {
-            marker.setAnimation(null);
-        } else {
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
-    });*/
+//set marker to bounce when mouseover
+    marker.addListener('mouseover', function(){
+        this.setAnimation(google.maps.Animation.BOUNCE);
+    });
 
+// set marker to stop bouncing on mouseout
+    marker.addListener('mouseout', function(){
+        this.setAnimation(null);
+    }); 
   }
-
-    
-
 }
 
 function OpenInfowindowForMarker(index) {
     google.maps.event.trigger(markers[index], 'click');
+    document.getElementById("map").scrollIntoView({ block: 'center',  behavior: 'smooth' });
 }
-
-google.maps.event.addDomListener(window, 'resize', initMap);
-google.maps.event.addDomListener(window, 'load', initMap);
-
-
-
-
-   
